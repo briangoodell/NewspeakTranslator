@@ -182,7 +182,7 @@ def checkAdj(word, sentence = None): # "sentence = None"  allows me to call the 
 #########################################Spell Checking With Microsoft's API#########################################
 
 ##url = "https://api.cognitive.microsoft.com/bing/v7.0/spellcheck"
-##api_key = "ca76a277b4424e65beeba28613b43056"
+##api_key = "YOUR KEY"
 input_text = input('Old Speak-> ')
 if(input_text == "%FILE"):
     print("FILE TRANSLATON MODE")
@@ -269,6 +269,10 @@ for v in short_words:
 done = False
 words = new_text.split(' ')
 for i in words:
+    i = i.replace(',','')
+    i = i.replace('.','')
+    i = i.replace('!','')
+    i = i.replace('?','')
     done = True #Changes it here so itll only change back if none of the ifs are triggered (its not a special case)
             
     if i in noun_dict:
